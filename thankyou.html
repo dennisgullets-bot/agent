@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Received - Thank You</title>
+    <style>
+        /* CSS Variables for easier color management */
+        :root {
+            --primary-color: #4f46e5; /* Indigo-600 equivalent */
+            --primary-light: #eef2ff; /* Indigo-50 equivalent */
+            --primary-border: #c7d2fe; /* Indigo-200 equivalent */
+            --text-dark: #1f2937; /* Gray-900 equivalent */
+            --text-medium: #4b5563; /* Gray-600 equivalent */
+            --text-light: #9ca3af; /* Gray-300 equivalent */
+            --text-secondary: #3730a3; /* Indigo-700 equivalent */
+            
+            /* NEW: Gradient Colors */
+            --accent-color-pink: #ec4899; /* Pink */
+            --accent-color-magenta: #a855f7; /* Magenta */
+            --gradient-top: linear-gradient(to right, var(--accent-color-pink), var(--accent-color-magenta));
+        }
+
+        /* Base Body and Layout Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ff 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem; /* p-4 */
+            margin: 0;
+        }
+
+        /* Confirmation Card Styling */
+        .confirmation-card {
+            background-color: white;
+            padding: 2rem; /* p-8 */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+            border-radius: 0.75rem; /* rounded-xl */
+            max-width: 512px; /* max-w-lg (512px) */
+            width: 100%; /* w-full */
+            text-align: center;
+            
+            /* --- GRADIENT BORDER FIX (with vendor prefix for compatibility/linting) --- */
+            border-top: 10px solid transparent; 
+            
+            /* Add -webkit- prefix */
+            -webkit-border-image: var(--gradient-top);
+            -webkit-border-image-slice: 1; 
+
+            /* Standard properties */
+            border-image: var(--gradient-top); 
+
+            border-image-slice: 1; 
+            /* --------------------------- */
+
+            transition: transform 0.5s ease-in-out; /* transition duration-500 */
+        }
+
+        .confirmation-card:hover {
+            transform: scale(1.01); /* hover:scale-[1.01] */
+        }
+
+        /* Header and Text Styles */
+        .icon-container {
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+
+        .icon {
+            width: 4rem; /* w-16 */
+            height: 4rem; /* h-16 */
+            margin-left: auto;
+            margin-right: auto;
+            /* NOTE: The checkmark icon will remain primary color for contrast */
+            color: var(--primary-color); 
+        }
+
+        .main-heading {
+            font-size: 2rem; /* text-3xl */
+            line-height: 1;
+            font-weight: 800; /* font-extrabold */
+            color: var(--text-dark);
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        
+        /* Responsive adjustments for heading */
+        @media (min-width: 768px) { /* md: */
+            .main-heading {
+                font-size: 2.25rem; /* md:text-4xl */
+            }
+            .confirmation-card {
+                padding: 3rem; /* md:p-12 */
+            }
+        }
+
+        .confirmation-message {
+            font-size: 1.125rem; /* text-lg */
+            color: var(--text-medium);
+            margin-bottom: 2rem; /* mb-8 */
+        }
+
+        /* Next Steps Box Styling */
+        .next-steps-box {
+            background-color: var(--primary-light);
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.5rem; /* rounded-lg */
+            border: 1px solid var(--primary-border); /* border border-indigo-200 */
+        }
+
+        .next-steps-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            color: var(--text-secondary); /* text-indigo-700 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+
+        .next-steps-text {
+            color: var(--text-dark); /* text-gray-700 */
+            line-height: 1.625; /* leading-relaxed */
+        }
+
+        /* Footer and Links Styling */
+        .footer-section {
+            margin-top: 2rem; /* mt-8 */
+            padding-top: 1rem; /* pt-4 */
+            border-top: 1px solid #f3f4f6; /* border-t border-gray-100 */
+        }
+
+        .footer-text {
+            font-size: 0.875rem; /* text-sm */
+            color: var(--text-medium);
+        }
+
+        .social-links {
+            margin-top: 1rem; /* mt-4 */
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* space-x-4 */
+        }
+
+        .social-links a {
+            color: var(--text-medium);
+            transition: color 0.15s ease-in-out; /* transition duration-150 */
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color); /* hover:text-indigo-600 */
+        }
+
+        .separator {
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="confirmation-card" class="confirmation-card">
+        
+        <!-- Icon/Visual -->
+        <div class="icon-container">
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="main-heading">
+            Application Received!
+        </h1>
+
+        <!-- Confirmation Message -->
+        <p class="confirmation-message">
+            Thank you for submitting your detailed application. We appreciate your interest in joining our team.
+        </p>
+
+        <!-- Key Action/Next Steps -->
+        <div class="next-steps-box">
+            <h2 class="next-steps-title">
+                What Happens Next?
+            </h2>
+            <p class="next-steps-text">
+                Your profile is now under thorough review by our scouting and management team. 
+                <br>
+                If your qualifications align with our current needs, **one of our Agents will reach out to you directly** within the next 7-10 business days.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

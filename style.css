@@ -1,0 +1,409 @@
+/* Variables for easy color changes */
+:root {
+    --primary-color: #91B1D0; /* Your requested color */
+    --accent-color-pink: #ED1E79; /* Brighter Pink from the image */
+    --accent-color-magenta: #C300FF; /* Bright Magenta/Purple from the image */
+    --text-color: #333;
+    --label-color: #777;
+    --border-color: #ccc;
+    --background-light: #f4f4f4;
+
+    /* New variables for the card style */
+    --card-border: #eee;
+    --required-badge-bg: #f0f0f0;
+    --required-badge-color: #888;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f8ff, #dbe9f6);
+    padding: 20px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- ADVANCED HEADER STYLES (Retained) --- */
+.header {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right top, var(--accent-color-pink), var(--accent-color-magenta));
+}
+
+.header-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3)), /* The color overlay */
+        url('/images/BFCM_PublicSale_HPH_D.webp') no-repeat right 30px center / auto 150%; /* Your original image */
+    z-index: 1; 
+}
+
+.wanted-text-box {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    color: black; 
+    font-size: 32px;
+    font-weight: bold;
+    text-align: right;
+    line-height: 1;
+    z-index: 3;
+}
+
+.wanted-subtext {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* --- FORM STYLES (Modified for Card Layout) --- */
+main {
+    padding: 40px;
+    /* Reset main text alignment for header/logo elements */
+    text-align: center; 
+}
+
+/* New: Logo/Text above the main title */
+.header-logo p {
+    font-family: 'Times New Roman', Times, serif; /* Example font */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.application-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 28px;
+    margin-bottom: 20px; /* Reduced margin */
+    font-weight: 700;
+}
+
+/* New: Section heading like "Models Information" */
+.section-heading {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.model-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between cards */
+}
+
+/* New: Styling for the card container */
+.form-card {
+    background-color: #fff;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    padding: 30px 20px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+/* New: Styling for the "1. FULL NAME" text */
+.card-title {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+
+/* --- INPUT & SELECT STYLES (Adapted for Card Look) --- */
+
+/* Resetting the previous form row/group layout, as the cards handle the layout */
+.form-row {
+    display: block; /* Overrides previous flex to make input span full width */
+    margin-bottom: 10px;
+}
+.form-group {
+    flex: none; /* Overrides previous flex */
+    position: relative;
+}
+
+/* Style for inputs within the card: thin line underneath */
+.form-card input{
+    width: 100%;
+    padding: 10px;
+    background-color: white !important;
+}
+
+.form-card input[type="text"], 
+.form-card input[type="email"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000; /* The required dark line */
+    padding: 5px 0; /* Padding adjustment for the line style */
+    font-size: 1.1em;
+    outline: none;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+/* Select fields and input focus are retained but adapted */
+input[type="text"]:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: none; /* Remove box shadow focus for the line style */
+    outline: none;
+    border-bottom: 2px solid var(--primary-color); /* Stronger line on focus */
+}
+
+/* New: Required Badge Styling */
+.required-badge {
+    display: inline-block;
+    background-color: var(--required-badge-bg);
+    color: var(--required-badge-color);
+    padding: 5px 8px;
+    font-size: 0.7em;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+/* New: Scroll Chevron (for the visual effect on the bottom-right of a card) */
+.card-actions {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.scroll-chevron {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #bbb;
+    position: relative;
+}
+
+.scroll-chevron::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: translate(-50%, -65%) rotate(45deg);
+}
+
+/* --- New Styles for Radio Button Questions (Q9 & Q10) --- */
+.payment-options.column {
+    flex-direction: column;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-option input[type="radio"] {
+    /* Hides the default radio button */
+    display: none; 
+}
+
+.radio-option label {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Custom Radio Button Circle */
+.radio-option label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555; /* Outline color */
+    margin-right: 15px;
+    transition: all 0.2s;
+}
+
+/* Custom Radio Button Fill (when checked) */
+.radio-option input[type="radio"]:checked + label::before {
+    background-color: #000; /* Fill color */
+    border-color: #000;
+}
+
+/* --- Styles for Textarea (Address Q5) --- */
+.form-card textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    font-size: 1.1em;
+    outline: none;
+    background-color: transparent;
+    resize: none; /* Prevents user resizing the box */
+}
+
+.form-card textarea:focus {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* --- Styles for Measurements (Q8) --- */
+.form-card .measurement-label {
+    display: block;
+    font-size: 12px;
+    color: var(--label-color);
+    margin-top: 5px;
+    text-align: center;
+}
+
+.form-card .dob-fields { /* Reusing the flex layout for date of birth */
+    display: block;
+}
+
+/* --- Styles for Clear Form Button --- */
+.clear-form-container {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.clear-form-btn {
+    background: none;
+    border: 1px solid #ccc;
+    color: #555;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.clear-form-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Style for the Up/Down Arrow (Reusing the scroll-chevron class) --- */
+.form-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.form-footer-nav p {
+    font-size: 0.9em;
+    color: var(--label-color);
+}
+
+.form-footer-nav .check-mark {
+    font-size: 1.5em;
+    color: green;
+}
+
+.scroll-chevron.up-arrow::after {
+    /* Rotate the existing chevron to point up */
+    transform: translate(-50%, -35%) rotate(-135deg); 
+}
+
+/* --- Date of Birth & Sex Styling (Retained/Adapted) --- */
+.dob-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.dob-fields select {
+    flex: 1;
+    /* Revert select padding/border to the original detailed look */
+    border: 1px solid var(--border-color);
+    padding: 10px 15px;
+    background-color: white;
+}
+/* Disable the unused previous label styles */
+.name-row .form-group label,
+.section-label,
+.section-label-small,
+.dob-labels {
+    display: none; 
+}
+/* Re-enable DOB labels if you use them outside the card structure */
+/* .dob-labels {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--label-color);
+}
+
+.dob-labels span {
+    flex: 1;
+    text-align: center;
+} */
+/* --- SUBMIT BUTTON STYLES --- */
+.submit-container {
+    padding: 30px 0 10px 0; /* Add vertical spacing below the last card */
+    text-align: center;
+}
+
+.submit-btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    
+    /* Use a linear gradient blending your accent colors */
+    background: linear-gradient(90deg, var(--accent-color-magenta) 0%, var(--accent-color-pink) 100%);
+    
+    /* Remove default button border and apply subtle shadow */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+    /* Slightly lift the button on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.submit-btn:active {
+    /* Press down effect */
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments (Retained) */
+@media (max-width: 600px) {
+    /* Form rows no longer need modification since they are block-level inside cards */
+    .form-card .dob-fields { /* Reusing the flex layout for date of birth */
+    display: block;
+    gap: 10px;
+}
+    .form-card .dob-fields  input{ /* Reusing the flex layout for date of birth */
+  width: 100%;
+}
+
+
+}
