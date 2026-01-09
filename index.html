@@ -1,178 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fashion Model Application</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
-    <header class="header">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
         <div class="header-image-container">
-            <div class="color-band-top"></div> 
-            
-            <div class="color-band-bottom"></div> 
+          <div class="color-band-top"></div>
 
-            <div class="wanted-text-box">
-                MEJURI
-                <div class="wanted-subtext">JEWELRY MODEL</div>
-            </div>
+          <div class="color-band-bottom"></div>
+
+          <div class="wanted-text-box">
+            MEJURI
+            <div class="wanted-subtext">JEWELRY MODEL</div>
+          </div>
         </div>
-    </header>
-    <main>
+      </header>
+      <main>
         <h1 class="application-title">JEWELRY MODEL APPLICATION</h1>
         <div class="section-heading">Models Information</div>
 
-   <form class="model-form" id="applicationForm">
-
-    <div class="form-card">
-        <h2 class="card-title">1. FULL NAME</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <input type="text" id="fullName" name="fullName" required>
+        <form class="model-form" id="applicationForm">
+          <div class="form-card">
+            <h2 class="card-title">1. FULL NAME</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <input type="text" id="fullName" name="fullName" required />
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
+            <span class="required-badge">Required</span>
+          </div>
 
-    <div class="form-card">
-        <h2 class="card-title">2. EMAIL</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <input type="email" id="email" name="email" required>
+          <div class="form-card">
+            <h2 class="card-title">2. EMAIL</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <input type="email" id="email" name="email" required />
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-        <div class="card-actions">
-            <span class="scroll-chevron"></span>
-        </div>
-    </div>
-
-    <div class="form-card">
-        <h2 class="card-title">3. DATE OF BIRTH</h2>
-        <div class="form-row dob-fields">
-           <input type="date" id="dob" name="dob" required>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
-
-    <div class="form-card">
-        <h2 class="card-title">4. PHONE NUMBER</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            <span class="required-badge">Required</span>
+            <div class="card-actions">
+              <span class="scroll-chevron"></span>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
-    
-    <div class="form-card">
-        <h2 class="card-title">5. HOME ADDRESS (FOR DELIVERIES)</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <textarea id="homeAddress" name="homeAddress" rows="2" required></textarea>
-            </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
+          </div>
 
-    <div class="form-card">
-        <h2 class="card-title">6. INSTAGRAM ID</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <input type="text" id="instagramID" name="instagramID" placeholder="@username" required>
+          <div class="form-card">
+            <h2 class="card-title">3. DATE OF BIRTH</h2>
+            <div class="form-row dob-fields">
+              <input type="date" id="dob" name="dob" required />
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
+            <span class="required-badge">Required</span>
+          </div>
 
-    <div class="form-card">
-        <h2 class="card-title">7. TIKTOK ID</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <input type="text" id="tiktokID" name="tiktokID" placeholder="@username">
+          <div class="form-card">
+            <h2 class="card-title">4. PHONE NUMBER</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  required
+                />
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
+            <span class="required-badge">Required</span>
+          </div>
 
-    <div class="form-card">
-        <h2 class="card-title">8. PHYSICAL MEASUREMENTS</h2>
-        <div class="form-row dob-fields">
-            <div class="form-group">
+          <div class="form-card">
+            <h2 class="card-title">5. HOME ADDRESS (FOR DELIVERIES)</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <textarea
+                  id="homeAddress"
+                  name="homeAddress"
+                  rows="2"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <span class="required-badge">Required</span>
+          </div>
+
+          <div class="form-card">
+            <h2 class="card-title">6. INSTAGRAM ID</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <input
+                  type="text"
+                  id="instagramID"
+                  name="instagramID"
+                  placeholder="@username"
+                  required
+                />
+              </div>
+            </div>
+            <span class="required-badge">Required</span>
+          </div>
+
+          <div class="form-card">
+            <h2 class="card-title">7. TIKTOK ID</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <input
+                  type="text"
+                  id="tiktokID"
+                  name="tiktokID"
+                  placeholder="@username"
+                />
+              </div>
+            </div>
+            <span class="required-badge">Required</span>
+          </div>
+
+          <div class="form-card">
+            <h2 class="card-title">8. PHYSICAL MEASUREMENTS</h2>
+            <div class="form-row dob-fields">
+              <div class="form-group">
                 <label for="height" class="measurement-label">Height</label>
-                <input type="number" id="height" name="height" placeholder="e.g., 5'7&quot;">
-            </div>
-            <div class="form-group">
+                <input
+                  type="number"
+                  id="height"
+                  name="height"
+                  placeholder="e.g., 5'7&quot;"
+                />
+              </div>
+              <div class="form-group">
                 <label for="weight" class="measurement-label">Weight</label>
-                <input type="number" id="weight" name="weight" placeholder="lbs / kg">
-            </div>
-            <div class="form-group">
+                <input
+                  type="number"
+                  id="weight"
+                  name="weight"
+                  placeholder="lbs / kg"
+                />
+              </div>
+              <div class="form-group">
                 <label for="bust" class="measurement-label">Bust</label>
-                <input type="number" id="bust" name="bust" placeholder="in / cm">
+                <input
+                  type="number"
+                  id="bust"
+                  name="bust"
+                  placeholder="in / cm"
+                />
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
-    
-    <div class="form-card">
-        <h2 class="card-title">9. HOW OFTEN DO YOU LIKE TO GET PAID?</h2>
-        <div class="form-row payment-options">
-            <div class="radio-option">
-                <input type="radio" id="weekly" name="payFrequency" value="weekly" required>
+            <span class="required-badge">Required</span>
+          </div>
+
+          <div class="form-card">
+            <h2 class="card-title">9. HOW OFTEN DO YOU LIKE TO GET PAID?</h2>
+            <div class="form-row payment-options">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="weekly"
+                  name="payFrequency"
+                  value="weekly"
+                  required
+                />
                 <label for="weekly">WEEKLY</label>
-            </div>
-            <div class="radio-option">
-                <input type="radio" id="biweekly" name="payFrequency" value="biweekly">
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="biweekly"
+                  name="payFrequency"
+                  value="biweekly"
+                />
                 <label for="biweekly">BI-WEEKLY</label>
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
+            <span class="required-badge">Required</span>
+          </div>
 
-    <div class="form-card">
-        <h2 class="card-title">10. HOW DO YOU WANT TO GET PAID?</h2>
-        <div class="form-row payment-options column">
-            <div class="radio-option">
-                <input type="radio" id="check" name="payMethod" value="check" required>
+          <div class="form-card">
+            <h2 class="card-title">10. HOW DO YOU WANT TO GET PAID?</h2>
+            <div class="form-row payment-options column">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="check"
+                  name="payMethod"
+                  value="check"
+                  required
+                />
                 <label for="check">CHECK</label>
-            </div>
-            <div class="radio-option">
-                <input type="radio" id="creditCard" name="payMethod" value="creditCard">
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="creditCard"
+                  name="payMethod"
+                  value="creditCard"
+                />
                 <label for="creditCard">CREDIT CARD PAYMENTS</label>
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
+            <span class="required-badge">Required</span>
+          </div>
 
-    <div class="form-card">
-        <h2 class="card-title">11. BANK NAME</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <input type="text" id="bankName" name="bankName" placeholder="Bank Name">
+          <div class="form-card">
+            <h2 class="card-title">11. BANK NAME</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <input
+                  type="text"
+                  id="bankName"
+                  name="bankName"
+                  placeholder="Bank Name"
+                />
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
-    </div>
+            <span class="required-badge">Required</span>
+          </div>
 
-    <div class="form-card">
-        <h2 class="card-title">11. AGENT NAME</h2>
-        <div class="form-row">
-            <div class="form-group full-width">
-                <input type="text" id="agentname" name="agentname" placeholder="Agent Name">
+          <div class="form-card">
+            <h2 class="card-title">11. AGENT NAME</h2>
+            <div class="form-row">
+              <div class="form-group full-width">
+                <input
+                  type="text"
+                  id="agentname"
+                  name="agentname"
+                  placeholder="Agent Name"
+                />
+              </div>
             </div>
-        </div>
-        <span class="required-badge">Required</span>
+            <span class="required-badge">Required</span>
+          </div>
+
+          <div class="form-card">
+            <h2 class="card-title">
+              12. HAVE YOU USED A GOOGLE CHAT ACCOUNT BEFORE?
+            </h2>
+            <div class="form-row payment-options column">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="gchat-yes"
+                  name="googleChatStatus"
+                  value="yes"
+                  required
+                />
+                <label for="gchat-yes">YES, I AM FAMILIAR WITH IT</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="gchat-no"
+                  name="googleChatStatus"
+                  value="no"
+                />
+                <label for="gchat-no"
+                  >NO (I WILL GET USED TO IT FOR COMMUNICATION)</label
+                >
+              </div>
+            </div>
+            <p class="instruction-text">
+              Note: We use Google Chat for official team communication. If you
+              haven't used it, please ensure you have a Gmail account ready.
+            </p>
+            <span class="required-badge">Required</span>
+          </div>
+
+          <div class="submit-container">
+            <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
+          </div>
+        </form>
+      </main>
     </div>
-    <div class="submit-container">
-        <button type="submit" class="submit-btn">
-            SUBMIT APPLICATION
-        </button>
-    </div>
-</form>
-    </main>
-</div>
-</body>
+  </body>
 </html>
